@@ -1,0 +1,27 @@
+{
+  "name": "eslint-plugin-boyscout",
+  "version": "0.0.1",
+  "description": "An experimental tool to help track refactoring efforts.",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "boyscout"
+  ],
+  "author": "Anonymous Coward",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "peerDependencies": {
+    "eslint": ">=3.19.0"
+  },
+  "dependencies": {
+    "requireindex": "^1.2.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "MIT"
+}
