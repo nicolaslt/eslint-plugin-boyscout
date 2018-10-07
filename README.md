@@ -2,9 +2,9 @@
 
 An experimental tool to help track refactoring efforts.
 
-`eslint-plugin-boyscout` does only one thing for now: let you define your own eslint rule in your project, without deploying to the npm registry.
+`eslint-plugin-boyscout` lets you define your own eslint rule in your project, without creating and deploying an eslint-plugin to the npm registry.
 
-Up to you what you do with those rules, we use them to keep track of long-winded refactoring efforts such as gradual transition to another testing framework.
+Up to you what you do with those rules, we use them to keep track of long-winded refactoring efforts.
 
 ## Installation
 
@@ -33,12 +33,15 @@ Add `boyscout` to the plugins section of your `.eslintrc` configuration file. Yo
 First, make sure you have a `boyscout-rules` directory at the root of your project (or where you will run eslint from)
 Then add your rules, following the [eslint-rule syntax](https://eslint.org/docs/developer-guide/working-with-rules) exactly as if they were under the `lib/rules` directory. 
 
-Your rules will be loaded by filename under the `boyscout` namespace. For example a rule file `boyscout-rule/replace-jquery.js` would be loaded as `boyscout/replace-jquery`
+Your rules will be loaded by filename under the `boyscout` namespace. For example a rule file `boyscout-rule/replace-jquery.js` will be loaded as `boyscout/replace-jquery`
 
+### Adding tests for your rules
+
+Any file/directory under `boyscout-rules` that starts with an underscore will be ignored by this plugin. You can take advantage of this to write [rule tester](https://eslint.org/docs/developer-guide/nodejs-api#ruletester) files.
 
 ### Using your rules
 
-Just ad them into your `.eslintrc` file, just like any other eslint rule
+Add them into your `.eslintrc` file, just like any other eslint rule
 ```json
 {
     "rules": {
@@ -46,8 +49,3 @@ Just ad them into your `.eslintrc` file, just like any other eslint rule
     }
 }
 ```
-
-
-
-
-
