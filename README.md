@@ -33,7 +33,7 @@ Add `boyscout` to the plugins section of your `.eslintrc` configuration file. Yo
 First, make sure you have a `boyscout-rules` directory at the root of your project (or where you will run eslint from)
 Then add your rules, following the [eslint-rule syntax](https://eslint.org/docs/developer-guide/working-with-rules) exactly as if they were under the `lib/rules` directory. 
 
-Your rules will be loaded by filename under the `boyscout` namespace. For example a rule file `boyscout-rule/replace-jquery.js` will be loaded as `boyscout/replace-jquery`
+Your rules will be loaded by filename under the `boyscout` namespace. For example a rule file `boyscout-rules/replace-jquery.js` will be loaded as `boyscout/replace-jquery`
 
 ### Adding tests for your rules
 
