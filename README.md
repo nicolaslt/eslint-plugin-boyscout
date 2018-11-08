@@ -18,34 +18,44 @@ $ npm install eslint-plugin-boyscout --save-dev
 
 ## Usage
 
-Add `boyscout` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Boyscout needs to know where the rules are defined, this forces you to use an `eslintrc.js` file to configure the plugin like so:
 
-```json
+```js
+require('eslint-plugin-boyscout').RULES_DIR = "/path/to/your/directory"
+```
+
+Youl also need to add `boyscout` to your configuration file:
+
+```js
 {
-    "plugins": [
+    plugins: [
         "boyscout"
     ]
 }
 ```
 
+**Warning**: We highly recommend the `RULES_DIR` to be an absolute path. If a relative path is used boyscout will try to load the rules relative to the current working directory... that works fine until you have more than one project using eslint and you don't change your directory before opening other projects files. Relative paths also probably don't work if you're using a global eslint.
+
 ### Creating rules
 
-First, make sure you have a `boyscout-rules` directory at the root of your project (or where you will run eslint from)
-Then add your rules, following the [eslint-rule syntax](https://eslint.org/docs/developer-guide/working-with-rules) exactly as if they were under the `lib/rules` directory. 
+Add rules in the directory you configured in [#usage](), following the [eslint-rule syntax](https://eslint.org/docs/developer-guide/working-with-rules) exactly as if they were under the `lib/rules` directory. 
 
-Your rules will be loaded by filename under the `boyscout` namespace. For example a rule file `boyscout-rule/replace-jquery.js` will be loaded as `boyscout/replace-jquery`
+The rules will be loaded by filename under the `boyscout` namespace. For example a rule file `any-directory/replace-jquery.js` will be loaded as `boyscout/replace-jquery`
 
-### Adding tests for your rules
+### Adding tests for rules
 
-Any file/directory under `boyscout-rules` that starts with an underscore will be ignored by this plugin. You can take advantage of this to write [rule tester](https://eslint.org/docs/developer-guide/nodejs-api#ruletester) files.
+Any file/directory that starts with an underscore will be ignored by this plugin. You can take advantage of this to write [rule tester](https://eslint.org/docs/developer-guide/nodejs-api#ruletester) files.
 
-### Using your rules
+### Using the rules
 
-Add them into your `.eslintrc` file, just like any other eslint rule
-```json
+Add them into the eslint configuration file, just like any other eslint rule
+```js
 {
-    "rules": {
+    rules: {
         "boyscout/rule-name": 2
     }
 }
 ```
+
+## Acknowledgement
+This plugin now contains some fixes taken from [eslint-plugin-rulesdir](https://npmjs.com/eslint-plugin-rulesdir)
