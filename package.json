@@ -12,7 +12,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha test --recursive",
-    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec",
+    "coverage": "istanbul cover _mocha --report lcovonly -- -R spec --recursive",
     "format": "prettier-eslint --write \"lib/**/*.js\" \"test/**/*.js\"",
     "lint": "eslint \"lib/**/*.js\" \"test/**/*.js\"",
     "lint-staged": "lint-staged"
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "coveralls": "^3.0.2",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.3.0",
