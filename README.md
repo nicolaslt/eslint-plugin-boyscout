@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/nicolaslt/eslint-plugin-boyscout/badge.svg?branch=master)](https://coveralls.io/github/nicolaslt/eslint-plugin-boyscout?branch=master) [![CircleCI](https://circleci.com/gh/nicolaslt/eslint-plugin-boyscout.svg?style=svg)](https://circleci.com/gh/nicolaslt/eslint-plugin-boyscout)
+
 # eslint-plugin-boyscout
 
 An experimental tool to help track refactoring efforts.
