@@ -17,6 +17,17 @@
     "lint": "eslint \"lib/**/*.js\" \"test/**/*.js\"",
     "lint-staged": "lint-staged"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier-eslint --write",
+      "git add"
+    ]
+  },
   "peerDependencies": {
     "eslint": ">=3.19.0"
   },
